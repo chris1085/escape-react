@@ -8,13 +8,13 @@ import ArticleDetail from './pages/ArticleDetail';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.BASENAME_URL}>
       <Nav />
       <Routes>
-        <Route path="products" element={<Products />} />
-        <Route path="products/:productId" element={<ProductDetail />} />
-        <Route path="article" element={<Article />} />
-        <Route path="article/:articleId" element={<ArticleDetail />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/products/:productId" element={<ProductDetail />} />
+        <Route path="/article" element={<Article />} />
+        <Route path="/article/:articleId" element={<ArticleDetail />} />
       </Routes>
     </BrowserRouter>
   );
