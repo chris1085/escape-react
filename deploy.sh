@@ -36,14 +36,14 @@ echo ${osStatus} " 一鍵部署 5 秒後開始運作 "
 echo ${osStatus} " ＊如要停止動作請按下 CRTL + C or Control + C"
 echo ${osStatus} "==============================================================${norm}"
 
-sleep 5s
+sleep 5
 
 echo
 echo ${osStatus} "${yellow}=============================================================="
 echo ${osStatus} " 準備取得 Git 遠端 Url..."
 echo ${osStatus} "==============================================================${norm}"
 
-sleep 1s
+sleep 1
 
 originUrl=$(git config --get remote.origin.url)
 
@@ -52,7 +52,7 @@ echo ${osStatus} "${lgreen}=====================================================
 echo ${osStatus} " 目前遠端分支: ${originUrl} "
 echo ${osStatus} "==============================================================${norm}"
 
-sleep 1s
+sleep 1
 split=${originUrl:0:5}
 status='';
 if [ $split = 'https' ]
@@ -74,7 +74,7 @@ echo ${osStatus} " 5 秒後開始編譯 "
 echo ${osStatus} " ＊如要停止動作請按下 CRTL + C or Control + C"
 echo ${osStatus} "==============================================================${norm}"
 
-sleep 5s
+sleep 5
 npm run build
 
 echo
@@ -103,8 +103,8 @@ echo ${osStatus} "${yellow}=====================================================
 echo ${osStatus} " 5 秒後部署檔案到遠端分支 "
 echo ${osStatus} " ＊如要停止動作請按下 CRTL + C or Control + C"
 echo ${osStatus} "==============================================================${norm}"
-sleep 5s
-git push -f $originUrl master:gh-pages
+sleep 5
+git push -f $originUrl main:gh-pages
 
 echo
 echo ${osStatus} "${yellow}=============================================================="
